@@ -1,19 +1,20 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
   homepage "https://pixi.sh/latest/advanced/production_deployment/#pixi-pack"
-  url "https://github.com/quantco/pixi-pack/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "b43c2e227e265e5ff7436e8ec7a6be1df85931cc85a0b4a717be6c26c2760305"
+  url "https://github.com/quantco/pixi-pack/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "f0f7c8afc6f8a15e714323e7e437a15b9e9130953670570359eef13a997d1bdd"
   license "BSD-3-Clause"
   head "https://github.com/quantco/pixi-pack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aed6ef2a54dc1fe2657bcd8ffe50ef2a84c4f2d6600add31773a549683f45df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6445360dd2f9b6aa00fc44b47d98b2f85b55fbc32dfe4529cff48819130c4e15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4faea5fff4fdcb650859d8401131d75e03a6a201cd0e55c42482bff27119089f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92dc3faa6139f4c53b391872a56ffbcadb37e935c4130b78fb9336b91a3191bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "2593d3e4df6e4ce837c4863b08aa59ff76966ded5c601192798080fe9f4040db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f318b3add8215af33b50cef27eadbc95c61d5b7b5b0f8930cdec8afa2a24ff4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d6b95356e2b2c51e3012731f6f036c58c14858df71cbb734c566d92817fbf1e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d31fabaca7ad3e5ff43938eb6780118c3769f7f8da9b8ff77e9188840aca9c56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a345181ec3f97f756b4011ca0a0426a61215d994b2d2ae86330ea5e9840f254a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1ca47df2d8a8b82a014fba811e3275eb00559cbd533cec1577336a7aeaadcc1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f978e42fe8dd18c7efb1a170bcbdbfce8768c1e62e96b327f048f80c9c91f29f"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7c414a0fb061b803fa709ab7ee8325d1bc25c6cab58b0396b4c7cdef1650a55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67692fc93c9bc0e68d0fa2d792574992821c1dcbedf5eae664a470c44e31f531"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6af820f22d39ec80cd3a27099473eeafad8200fc6a5854f89c4c8040b5ccb943"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +29,8 @@ class PixiPack < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"pixi-pack", "completion", "-s")
   end
 
   test do

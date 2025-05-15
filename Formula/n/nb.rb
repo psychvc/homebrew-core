@@ -1,19 +1,19 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https://xwmx.github.io/nb"
-  url "https://github.com/xwmx/nb/archive/refs/tags/7.17.0.tar.gz"
-  sha256 "4dc803d2247857f3c03497ea87921cc462e104b5f0780c598528d2247c4da5f8"
+  url "https://github.com/xwmx/nb/archive/refs/tags/7.19.0.tar.gz"
+  sha256 "a1f7c6d8832a10161d5e05e91410564371f6bac9f4c9a10a02b1ecd23b6bc623"
   license "AGPL-3.0-or-later"
   head "https://github.com/xwmx/nb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ccaac19205784fb7cb81fc7f03e4f77f65c8da6297d1fd8c93e63e0df8be472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ccaac19205784fb7cb81fc7f03e4f77f65c8da6297d1fd8c93e63e0df8be472"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ccaac19205784fb7cb81fc7f03e4f77f65c8da6297d1fd8c93e63e0df8be472"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc4c8ee86526bccedc3a1a6f04416e1faa89166d3450f732a3a76c9a15a9b225"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc4c8ee86526bccedc3a1a6f04416e1faa89166d3450f732a3a76c9a15a9b225"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ccaac19205784fb7cb81fc7f03e4f77f65c8da6297d1fd8c93e63e0df8be472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ccaac19205784fb7cb81fc7f03e4f77f65c8da6297d1fd8c93e63e0df8be472"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cce374d8304d0945ae6aa2925e27e56d0a334ab018d5bef3fefd6f68d2bd8c91"
+    sha256 cellar: :any_skip_relocation, ventura:       "cce374d8304d0945ae6aa2925e27e56d0a334ab018d5bef3fefd6f68d2bd8c91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
   end
 
   depends_on "bat"

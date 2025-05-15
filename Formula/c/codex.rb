@@ -1,18 +1,18 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2505021246.tgz"
-  sha256 "70d27f89af3eb9d2697de0a9ba68564d32fc6faecb6f8dfcd2cca7e6ab919ab8"
+  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2505141022.tgz"
+  sha256 "56548be82188742828bdce9721fe5e046740da9552d8f145404fb44e239e00b7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c0511f07c5d8b0ee0d5bd810f802fafe569a9b002590afa8e2452bdced54c37"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c0511f07c5d8b0ee0d5bd810f802fafe569a9b002590afa8e2452bdced54c37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6179ec361d37813db5c0f668bc5fca20a8dc297b8df056b3c53d5cedc018aba"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6179ec361d37813db5c0f668bc5fca20a8dc297b8df056b3c53d5cedc018aba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6afc64bfb2b3f614ee89921cb4f06f625b4b8c7f02740a77fab9d3a2cc2b34c3"
   end
 
   depends_on "node"
@@ -20,6 +20,10 @@ class Codex < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    libexec.glob("lib/node_modules/@openai/codex/bin/*")
+           .each { |f| rm_r(f) if f.extname != ".js" }
 
     generate_completions_from_executable(bin/"codex", "completion")
   end

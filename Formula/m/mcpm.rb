@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/44/f7/b7fff1838c836868e3d6e0c14b4eaa992341f428a8683fc7e5f9dee592d6/mcpm-1.9.0.tar.gz"
-  sha256 "97c112cb6d40e9bbcb4091c1db79da4eeda256bfa48083fa1f3abb260b814686"
+  url "https://files.pythonhosted.org/packages/35/07/cc64bc0a475a1124ac24f2d47ef7b768649d257ed5019a6b4eaa1ec9448f/mcpm-1.11.0.tar.gz"
+  sha256 "36602aa78318b74ef2aabcee9846497c2955cd8cbea7792ff43970aa6d80c5ce"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a2d1b48851c8c5d53a633576144a3c232ba93598b4e0950acc386168ece69f35"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1a8656c41f4e64b82840dd1937794e698502b22711f2b0c8ae0b1324c7d927d"
-    sha256 cellar: :any,                 arm64_ventura: "9620316e14d29ba623d1f3b0d4e8bde669e1a6b32dd03a156f7e0385c95c009a"
-    sha256 cellar: :any,                 sonoma:        "5dcbb1d28ad74746efbf07b159525723c44dc872b3c0e0716908a23c9739ac7d"
-    sha256 cellar: :any,                 ventura:       "bb357a039ff5f7f1c403b04606578103caac9dd4f9a67267dae739193b0e874e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08166d02dce45aed09214e3d346832964fc4286fa3f30d07cdea933a7cc4bc06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c97ef95cafdc146db09cc0ae3462c19f11a3139056c479f16ac03c683a2fb5d9"
+    sha256 cellar: :any,                 arm64_sequoia: "4a925f01fc026294beababec36d62d5cbb0da5a64c97cbb0c51786ce74d33c96"
+    sha256 cellar: :any,                 arm64_sonoma:  "da0194e27d277cbe7a4ca8b592162158cfb28775854e20f86c669e79eeb7ed07"
+    sha256 cellar: :any,                 arm64_ventura: "ff1dfb5921bb386f159afc9c705b4ecde56318e8efa006526bffb42ba44e006b"
+    sha256 cellar: :any,                 sonoma:        "6e25651828a07c4f0769fd6bca633afd147757eac59a94dacf14b790be5b8254"
+    sha256 cellar: :any,                 ventura:       "eec9ad64c1f9ba56e27005409983f304b950249e6793fa07981f3d0f4c3c994a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20241c8a7119195cce817ef5ed3fda56cf6b9b13ab275bff6dfeabd9d62a8de6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bd46cd8940d0d230beced58f34289b5fd13bf84db542202846a6d0f5a854172"
   end
 
   depends_on "rust" => :build
@@ -41,8 +41,8 @@ class Mcpm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/cd/0f/62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41/click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "duckdb" do
@@ -81,8 +81,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/25/ae/588691c45b38f4fbac07fa3d6d50cea44cc6b35d16ddfdf26e17a0467ab2/mcp-1.7.1.tar.gz"
-    sha256 "eb4f1f53bd717f75dda8a1416e00804b831a8f3c331e23447a03b78f04b43a6e"
+    url "https://files.pythonhosted.org/packages/95/d2/f587cb965a56e992634bebc8611c5b579af912b74e04eb9164bd49527d21/mcp-1.6.0.tar.gz"
+    sha256 "d9324876de2c5637369f43161cd71eebfd803df5a95e46225cab8d280e366723"
   end
 
   resource "mdurl" do
@@ -125,11 +125,6 @@ class Mcpm < Formula
     sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
   end
 
-  resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
@@ -151,8 +146,8 @@ class Mcpm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/43/be/7e776a29b5f712b5bd13c571256a2470fcf345c562c7b2359f2ee15d9355/sse_starlette-2.3.4.tar.gz"
-    sha256 "0ffd6bed217cdbb74a84816437c609278003998b4991cd2e6872d0b35130e4d5"
+    url "https://files.pythonhosted.org/packages/10/5f/28f45b1ff14bee871bacafd0a97213f7ec70e389939a80c60c0fb72a9fc9/sse_starlette-2.3.5.tar.gz"
+    sha256 "228357b6e42dcc73a427990e2b4a03c023e2495ecee82e14f07ba15077e334b2"
   end
 
   resource "starlette" do
