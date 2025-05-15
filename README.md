@@ -1,6 +1,6 @@
 # Homebrew Core
 
-Core formulae for the Homebrew package manager.
+Core formulae for the Homebrew package manager.  
 
  [Homebrew/discussions (forum)](https://github.com/orgs/Homebrew/discussions)
 
